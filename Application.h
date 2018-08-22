@@ -50,3 +50,5 @@ public:
 	};//Class Iterator
 
 };//Class Application
+
+#endif
