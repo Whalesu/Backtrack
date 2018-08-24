@@ -1,4 +1,4 @@
-Backtrack example for maze detection;
+Backtrack example for route detection;
 STL Ver.1;
 Practice of git tutorial
 Class are already deployed.Next Time CMAKE implementation.
