@@ -13,7 +13,7 @@ const int COLS = 13;
 
 struct itrFields
 {
-  int row,col,drc
+  int row,col,drc;
 };
 
 int grid[ROWS][COLS]=
@@ -28,7 +28,7 @@ int grid[ROWS][COLS]=
 };//grid
 
 Position start,finish;
-Position Application::genInitialState(int row = 0,int col = 0)
+Position Application::genInitialState()
 {
   const string START_PROMPT =
   "Please enter the finish row and start col";
@@ -48,24 +48,26 @@ Position Application::genInitialState(int row = 0,int col = 0)
   return start;
 }
 
-bool Application::valid(Position& pos)
+bool Application::valid(const Position& pos)
 {
-  (pos.getRow() >= 0 && pos.getRow() < ROWS &&
+  if(pos.getRow() >= 0 && pos.getRow() < ROWS &&
    pos.getCol() >= 0 && pos.getCol() < COLS &&
-   grid[pos.getRow()][pos.getCol()] == CORRIDOR)? True : False;
+   grid[pos.getRow()][pos.getCol()] == CORRIDOR)
+    return true;
+  return false;
 }
 
-void Positiion::record(const Position& pos)
+void Application::record(const Position& pos)
 {
   grid[pos.getRow()][pos.getCol()] = PATH;
 }
 
-bool Position::done(const Position& pos)
+bool Application::done(const Position& pos)
 {
   return (pos.getRow() == finish.getRow() && pos.getCol() == finish.getCol());
 }
 
-void Position::undo(const Position& pos)
+void Application::undo(const Position& pos)
 {
   grid[pos.getRow()][pos.getCol()] = TRIED;
 }
@@ -76,28 +78,28 @@ ostream& operator<< (ostream& stream,Application& app)
   for(int row = 0;row < ROWS;row++)
   {
     for(int col = 0;col < COLS;col++)
-      cout<<grid[row][column]<<' ';
+      cout<<grid[row][col]<<' ';
     cout<<endl;
   }
 
   return stream;
 }
 
-Application::Iterator::Iterator(Position& pos)
+Application::Iterator::Iterator(const Position& pos)
 {
   itrFields* itrPtr = new itrFields;
   itrPtr->row = pos.getRow();
   itrPtr->col = pos.getCol();
-  itrPrt->drc = 0;
+  itrPtr->drc = 0;
   fieldPtr = itrPtr;
 }
 
 Position Application::Iterator::operator++(int)
 {
-  itrFields* itrPtr = (itrField*)fieldPtr;
+  itrFields* itrPtr = (itrFields*)fieldPtr;
   int nextRow = itrPtr->row,nextCol = itrPtr->col;
 
-  switch(itrPtr->direction++)
+  switch(itrPtr->drc++)
   {
     case 0:nextRow = itrPtr->row - 1;
           break;
@@ -115,6 +117,6 @@ Position Application::Iterator::operator++(int)
 
 bool Application::Iterator::atEnd()
 {
-  return ((itrFields*)fieldPtr -> drc >= 3);
+  return (((itrFields*)fieldPtr) -> drc >= 3);
 }
 

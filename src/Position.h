@@ -8,8 +8,8 @@ public:
   Position();
   Position(int row,int col);
   void setPos(int row,int col);
-  int getRow();
-  int getCol();
+  int getRow() const;
+  int getCol() const;
 protected:
   int row,col;
 };
