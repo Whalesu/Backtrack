@@ -10,15 +10,16 @@ Backtrack::Backtrack(const Application& app)
 bool Backtrack::tryToSolve(Position pos)
 {
   bool success = false;
-  Position::Iterator itr = pos.begin();
-  while(!success && itr != pos.end())
+  Application::Iterator itr = Application::Iterator(pos);
+
+  while(!success && !itr.atEnd())
   {
     pos = itr++;
     if(app.valid(pos))
     {
       app.record(pos);
       if(app.done(pos))
-        success = True;
+        success = true;
       else
       {
         success = tryToSolve(pos);
