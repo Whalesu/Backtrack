@@ -1,5 +1,13 @@
-/home/supersu/Documents/Backtrack/build/CMakeFiles/rebuild_cache.dir
+/home/supersu/Documents/Backtrack/build/CMakeFiles/install/strip.dir
+/home/supersu/Documents/Backtrack/build/CMakeFiles/install.dir
+/home/supersu/Documents/Backtrack/build/CMakeFiles/install/local.dir
+/home/supersu/Documents/Backtrack/build/CMakeFiles/list_install_components.dir
 /home/supersu/Documents/Backtrack/build/CMakeFiles/edit_cache.dir
-/home/supersu/Documents/Backtrack/build/bin/CMakeFiles/rebuild_cache.dir
-/home/supersu/Documents/Backtrack/build/bin/CMakeFiles/Backtrack.dir
+/home/supersu/Documents/Backtrack/build/CMakeFiles/rebuild_cache.dir
+/home/supersu/Documents/Backtrack/build/bin/CMakeFiles/install/strip.dir
 /home/supersu/Documents/Backtrack/build/bin/CMakeFiles/edit_cache.dir
+/home/supersu/Documents/Backtrack/build/bin/CMakeFiles/Backtrack.dir
+/home/supersu/Documents/Backtrack/build/bin/CMakeFiles/list_install_components.dir
+/home/supersu/Documents/Backtrack/build/bin/CMakeFiles/install/local.dir
+/home/supersu/Documents/Backtrack/build/bin/CMakeFiles/rebuild_cache.dir
+/home/supersu/Documents/Backtrack/build/bin/CMakeFiles/install.dir

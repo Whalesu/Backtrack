@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.10)
 PROJECT (Backtrack)
 SET(SRC_LIST BacktrackMain.cpp Backtrack.cpp Maze.cpp Position.cpp)
 
-MESSAGE(STATUS "This is BINARY dir" ${Backtrack_BINARY_DIR})
-MESSAGE(STATUS "This is SOURCE dir" ${Backtrack_SOURCE_DIR})
+#SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)#
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+
+MESSAGE(STATUS "This is BINARY dir" ${PROJECT_BINARY_DIR})
+MESSAGE(STATUS "This is SOURCE dir" ${PROJECT_SOURCE_DIR})
+MESSAGE(STATUS "This is executable output path dir" ${EXECUTABLE_OUTPUT_PATH})
 ADD_EXECUTABLE(Backtrack ${SRC_LIST})
+INSTALL(TARGETS Backtrack RUNTIME DESTINATION bin)
+#cmake -DCMAKE_INSTALL_PREFIX=/home/supersu/btrk ..

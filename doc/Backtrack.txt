@@ -1,0 +1,3 @@
+Objective: using Backtrack method to find a route in Maze or return failure;
+
+Second target: reviewing OOP coding and merit of void pointer

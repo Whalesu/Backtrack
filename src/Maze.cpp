@@ -33,15 +33,21 @@ Position Application::genInitialState()
   const string START_PROMPT =
   "Please enter the finish row and start col";
   const string FINISH_PROMPT =
-  "Please enter the end row and end col";
+  "Please enter the end row and end col:";
 
   int row,col;
 
-  cout<<START_PROMPT;
-  cin >> row >> col;
+  cout<<START_PROMPT<<"(limit:r7c13): "<<endl;
+  cout<<"Row: ";
+  cin >> row;
+  cout<<"Column: ";
+  cin >> col;
   start.setPos(row,col);
-  cout<<FINISH_PROMPT;
-  cin >> row >> col;
+  cout<<FINISH_PROMPT<<"(limit:r7c13): ";
+  cout<<"Row: ";
+  cin >> row;
+  cout<<"Column: ";
+  cin >> col;
   cin.get();
   finish.setPos(row,col);
 
